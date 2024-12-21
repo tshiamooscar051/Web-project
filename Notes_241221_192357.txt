@@ -1,0 +1,176 @@
+ArtVenture E-commerce Website
+*index.html*
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtVenture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Art</a></li>
+                <li><a href="#">Fashion</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="featured-products">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <!-- Product cards will be generated here -->
+            </div>
+        </section>
+        <section class="artists">
+            <h2>Meet Our Artists</h2>
+            <div class="artist-grid">
+                <!-- Artist cards will be generated here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 ArtVenture</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+*styles.css*
+```
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.featured-products {
+    background-color: #f7f7f7;
+    padding: 1em;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.product-card {
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.artist-card {
+    background-color: #fff;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+}
+```
+
+*script.js*
+```
+// This script will be used to generate product and artist cards dynamically
+const productGrid = document.querySelector('.product-grid');
+const artistGrid = document.querySelector('.artist-grid');
+
+// Sample product data
+const products = [
+    {
+        id: 1,
+        name: 'Product 1',
+        price: 19.99,
+        image: 'images/products/product1.jpg'
+    },
+    {
+        id: 2,
+        name: 'Product 2',
+        price: 29.99,
+        image: 'images/products/product2.jpg'
+    },
+    // Add more products here...
+];
+
+// Sample artist data
+const artists = [
+    {
+        id: 1,
+        name: 'Artist 1',
+        bio: 'This is artist 1 bio.',
+        image: 'images/artists/artist1.jpg'
+    },
+    {
+        id: 2,
+        name: 'Artist 2',
+        bio: 'This is artist 2 bio.',
+        image: 'images/artists/artist2.jpg'
+    },
+    // Add more artists here...
+];
+
+// Function to generate product cards
+function generateProductCards() {
+    products.forEach((product) => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>$${product
+```
